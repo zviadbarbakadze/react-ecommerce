@@ -1,13 +1,204 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.card-cont{
+ 
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ justify-content: space-around;
+ padding-top: 80px;
+ 
+}
+.card{
+  width: 350px;
+  height: 1000px;
+  border: 2px solid rgb(182, 6, 103);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px gray;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+ 
+}
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(149, 83, 211);
+   opacity: 0.9;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+ 
+}
+a{
+ color: aliceblue;
+ margin: 0 20px;
+ font-size: 25px;
+}
+nav a.active{
+  font-weight: bold;
+  color: rgb(225, 228, 39);
+}
+
+p{
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(58, 82, 35);
+}
+span{
+  font-size: 30px;
+  color: rgb(26, 209, 26);
+  font-weight: bold;
+}
+button{
+  width:150px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: rgb(144, 202, 27);
+  color: bisque;
+  font-size: 20px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+button:hover{
+  background-color: rgb(6, 158, 13);
+}
+.shop-number{
+  width: 40px;
+  height: 25px;
+  background-color: red;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  display: block;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart-info{
+  background-color: rgb(180, 218, 44);
+
+  min-height: 400px;
+  position: absolute;
+  top:10%;
+  right: 0;
+ 
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-around;
+ position: fixed;
+ 
+}
+.cart-info button{
+  width: 5rem;
+  background-color: rgb(233, 146, 85);
+}
+
+.cart-map{
+ min-width:350px;
+  display: flex;
+  justify-content: space-around;
+}
+button.plus-button{
+  background-color: rgb(34, 219, 34);
+  width: 30px;
+}
+button.plus-button:hover{
+  background-color: chartreuse;
+}
+button.minus-button{
+  width: 30px;
+}
+button.minus-button:hover{
+background-color: darkred;
+}
+button.delete-button{
+  width: 5rem;
+  background-color: rgb(228, 27, 27);
+}
+button.delete-button:hover{
+  background-color: darkred;
+}
+.empty{
+  color:red ;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.total-price{
+font-size: 40px;
+font-weight: bold;
+
+color: white;
+}
+.qty{
+  
+  color: grey;
+  width: 15vw;
+}
+hr{
+  width: 40vw;
+ 
+}
+button.check-out{
+  width: 300px;
+  background-color: rgb(235, 179, 28);
+  color: grey;
+  animation: mymove 3s infinite
+}
+@keyframes mymove {
+  from {background-color: rgb(187, 255, 0);}
+  to {background-color: rgb(255, 251, 0);}
+}
+button.check-out:hover{
+  background-color: orangered;
+}
+.cart{
+  cursor: pointer;
+
+}
+.fimenu{
+font-size: 50px;
+color: white;
+cursor: pointer;
+display: none;
+}
+@media(max-width:970px){
+  .fimenu{
+    display: block;
+  }
+  .otherpoducts{
+    position: absolute;
+    left: 7%;
+    top:70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color:rgb(149, 83, 211) ;
+    height:300px;
+    
+   }
+   .cart-info{
+    position: fixed;
+    top:35%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    min-width: 350px;
+   }
 }
