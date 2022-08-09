@@ -41,6 +41,12 @@ nav{
   width: 100%;
  
 }
+.main-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
 a{
  color: aliceblue;
  margin: 0 20px;
@@ -102,6 +108,7 @@ button:hover{
  align-items: center;
  justify-content: space-around;
  position: fixed;
+ border-radius: 5px;
  
 }
 .cart-info button{
@@ -176,29 +183,57 @@ button.check-out:hover{
 font-size: 50px;
 color: white;
 cursor: pointer;
-display: none;
+visibility: hidden;
+opacity: 0;
 }
-@media(max-width:970px){
+@media(max-width:1080px){
   .fimenu{
-    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+  .main-nav{
+    position:fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:1.5rem;
+    background-color:rgb(149, 83, 211);
+    transition: 1s;
+    transform:translateY(-100vh);
+  }
+  .cart-info{
+    position:fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:1.5rem;
+  
+    
   }
   .otherpoducts{
-    position: absolute;
-    left: 7%;
-    top:70%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    background-color:rgb(149, 83, 211) ;
-    height:300px;
-    
+    justify-content: center;
+    flex-direction: column;
+    gap:1.5rem;
+  }
+   .responsive-nav{
+    transform: none;
    }
-   .cart-info{
-    position: fixed;
-    top:35%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    min-width: 350px;
+   .close{
+    position: absolute;
+    top:2rem;
+    right:2rem;
+
    }
 }

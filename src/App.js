@@ -1,7 +1,7 @@
 
 
 
-import { createContext, useState } from 'react';
+import { createContext, useRef, useState } from 'react';
 
 
 
@@ -19,11 +19,10 @@ function App() {
  
   const[cart,setCart]=useState([])
   const [toggle, setToggle] = useState(false);
-  const[show,setShow]=useState(true)
-  const handleNav=()=>{
-    setShow(!show)
-  }
- 
+  const navRef=useRef()
+   const showNavbar=()=>{
+    navRef.current.classList.toggle("responsive-nav")
+   }
   const handle=()=>{
     setToggle(!toggle)
   }
@@ -56,18 +55,18 @@ function App() {
 
 
   return (
-    <countContext.Provider value={{cart,addToCart,remove,deleteItem,handle,handleNav,show}}>
+    <countContext.Provider value={{cart,addToCart,remove,deleteItem,handle,showNavbar,navRef}}>
     <div className="App">
     
      <Nav />
      
       {toggle && (<Cart />)}
       <Routes>
-  <Route path='/' element={<Allproducts />}/>
-  <Route path='jewelery' element={<Jewelery/>}/>
-  <Route path='electronic' element={<Electronic/>}/>
-  <Route path='mensclothes' element={<Mens/>}/>
-  <Route path='womensclothes' element={<Woman/>}/>
+  <Route path='react-ecommerce' element={<Allproducts />}/>
+  <Route path='react-ecommerce/jewelery' element={<Jewelery/>}/>
+  <Route path='react-ecommerce/electronic' element={<Electronic/>}/>
+  <Route path='react-ecommerce/mensclothes' element={<Mens/>}/>
+  <Route path='react-ecommerce/womensclothes' element={<Woman/>}/>
   </Routes>
   
   

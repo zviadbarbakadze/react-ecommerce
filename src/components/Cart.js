@@ -1,15 +1,21 @@
 import React, { useContext } from 'react'
+import { FaTimes } from 'react-icons/fa'
 import { countContext } from '../App'
 
 export default function Cart() {
-  const {cart,addToCart,remove,deleteItem}=useContext(countContext)
+  const {cart,addToCart,remove,deleteItem,handle}=useContext(countContext)
   const totalPrice=cart.reduce((a,c)=>a+c.price*c.qty,0)
 
   
   return (
     <>
     <div className='cart-info'>
-      {cart.length===0 && <div className='empty' >Your Cart Is Empty!</div>}
+      {cart.length===0 && <div className='empty' >
+        <>
+        Your Cart Is Empty!
+        <FaTimes className='fimenu close' onClick={handle} />
+        </>
+        </div>}
       
   
    
@@ -30,6 +36,7 @@ export default function Cart() {
         <hr></hr>
         <div className='total-price'>Total Price: {totalPrice.toFixed(2)}$</div>
         <button className='check-out' onClick={()=>alert('Checked!')}>Check Out</button>
+        <FaTimes className='fimenu close' onClick={handle} />
         </>
        )}
        
