@@ -120,6 +120,7 @@ button:hover{
  min-width:350px;
   display: flex;
   justify-content: space-around;
+  
 }
 button.plus-button{
   background-color: rgb(34, 219, 34);
